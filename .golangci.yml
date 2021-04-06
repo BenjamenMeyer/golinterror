@@ -1,0 +1,29 @@
+---
+
+linters:
+    enable:
+        - gofmt
+        - golint
+issues:
+    # 0 = infinite
+    max-issues-per-linter: 0
+    # 0 = infinite
+    max-same-issues: 0
+    # linter incorrectly identifies these as not being used
+    # they are, just not directly
+    # file: ringbuffer/buffer.go
+    exclude-rules:
+      - text: '`headerSize` is unused'
+        linters: [structcheck]
+      - text: '`counts` is unused'
+        linters: [structcheck]
+      - text: '`eventNameCount` is unused'
+        linters: [structcheck]
+      - text: '`variableNameCount` is unused'
+        linters: [structcheck]
+      - text: '`currentIndex` is unused'
+        linters: [structcheck]
+      - text: '`fixedEventVariableCount` is unused'
+        linters: [structcheck]
+      - text: '`categoryStatus` is unused'
+        linters: [structcheck]
